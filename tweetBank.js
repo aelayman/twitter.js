@@ -2,7 +2,9 @@ const _ = require('lodash');
 var data = [];
 
 function add (name, content) {
-    data.push({ name: name, content: content });
+    var id = data.length.toString();
+    data.push({ name: name, content: content, id: id});
+
   }
   
   function list () {
@@ -14,6 +16,7 @@ function add (name, content) {
   }
   
   module.exports = { add: add, list: list, find: find };
+
 
   const randArrayEl = function(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
